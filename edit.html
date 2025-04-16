@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Data</title>
+</head>
+<body>
+  <h2>Edit Data</h2>
+  <form action="https://your-backend-url.com/update.php" method="post" enctype="multipart/form-data">
+    <!-- Ganti value default ini dari JavaScript jika ingin load data -->
+    <input type="hidden" name="id" value="1">
+
+    <label>Nama:</label><br>
+    <input type="text" name="nama" value="Nama Lama"><br><br>
+
+    <label>Ganti Foto (opsional):</label><br>
+    <input type="file" name="image" accept="image/*"><br><br>
+
+    <input type="submit" value="Update">
+  </form>
+</body>
+</html>

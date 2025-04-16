@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Data</title>
+</head>
+<body>
+  <h2>Data dari Database</h2>
+  <div id="data-container">Loading data...</div>
+
+  <script>
+    fetch("https://your-backend-url.com/get-data.php")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("data-container");
+        container.innerHTML = "";
+        data.forEach(item => {
+          container.innerHTML += `
+            <div>
+              <h4>${item.nama}</h4>
+              <img src="https://your-backend-url.com/uploads/${item.foto}" width="150" />
+            </div><hr>`;
+        });
+      })
+      .catch(error => {
+        document.getElementById("data-container").innerText = "Gagal mengambil data.";
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
